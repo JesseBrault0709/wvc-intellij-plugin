@@ -11,5 +11,8 @@ object WvcTextAttributeKeys {
     val tokenStructure = TextAttributesKey.createTextAttributesKey(
         "tokenStructure", XmlHighlighterColors.HTML_TAG
     )
+    val tokenIdentifier = TextAttributesKey.createTextAttributesKey(
+        "tokenIdentifier", XmlHighlighterColors.HTML_TAG_NAME
+    )
     val badToken = TextAttributesKey.createTextAttributesKey("badToken", HighlighterColors.BAD_CHARACTER)
 }

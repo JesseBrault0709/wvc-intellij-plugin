@@ -1,14 +1,11 @@
 package groowt.intellij.wvc.psi
 
 import com.intellij.psi.tree.TokenSet
-import groowt.intellij.wvc.WvcLanguage
 import groowt.view.component.web.antlr.WebViewComponentsLexer.*
-import org.antlr.intellij.adaptor.lexer.PSIElementTypeFactory
 
 object WvcTokenTypeSets {
 
-    val tagStructureTokens: TokenSet = PSIElementTypeFactory.createTokenSet(
-        WvcLanguage,
+    val tagStructureTokens: TokenSet = createWvcTokenSet(
         ComponentOpen,
         ComponentClose,
         ComponentSelfClose,
@@ -17,12 +14,7 @@ object WvcTokenTypeSets {
         FragmentClose
     )
 
-    val tagIdentifierTokens: TokenSet = PSIElementTypeFactory.createTokenSet(
-        WvcLanguage, TypedIdentifier, StringIdentifier
-    )
-
-    val badTokens: TokenSet = PSIElementTypeFactory.createTokenSet(
-        WvcLanguage, TagStartError, TagError
-    )
+    val tagIdentifierTokens: TokenSet = createWvcTokenSet(TypedIdentifier, StringIdentifier)
+    val badTokens: TokenSet = createWvcTokenSet(TagStartError, TagError)
 
 }

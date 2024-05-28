@@ -10,6 +10,7 @@ import groowt.intellij.wvc.lexer.getDefaultLexer
 import groowt.intellij.wvc.psi.WvcElementTypes
 import groowt.intellij.wvc.psi.WvcPsiFile
 import groowt.intellij.wvc.psi.WvcTokenTypeSets
+import groowt.intellij.wvc.psi.impl.WvcTemplateClass
 
 class WvcParserDefinition : ParserDefinition {
 
@@ -24,7 +25,11 @@ class WvcParserDefinition : ParserDefinition {
     override fun getStringLiteralElements() = WvcTokenTypeSets.stringLiteralTokens
 
     override fun createElement(astNode: ASTNode): PsiElement {
-        return ASTWrapperPsiElement(astNode)
+        if (astNode.elementType == WvcElementTypes.compilationUnit) {
+            return WvcTemplateClass(astNode)
+        } else {
+            return ASTWrapperPsiElement(astNode)
+        }
     }
 
     override fun createFile(fileViewProvider: FileViewProvider) =

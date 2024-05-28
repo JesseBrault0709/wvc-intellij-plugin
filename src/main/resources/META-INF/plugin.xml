@@ -41,9 +41,11 @@
                 implementationClass="groowt.intellij.wvc.parser.WvcParserDefinition"
         />
         <colorSettingsPage implementation="groowt.intellij.wvc.syntax.WvcColorSettingsPage" />
-        <psi.referenceContributor
-            language="JAVA"
-            implementation="groowt.intellij.wvc.psi.WvcTemplateTypeReferenceContributor"
-        />
+        <stubElementTypeHolder class="groowt.intellij.wvc.psi.stub.WvcStubTypes" externalIdPrefix="wvc" />
+        <stubIndex implementation="groowt.intellij.wvc.index.WvcQualifiedTemplateNamesIndex" />
+        <java.elementFinder implementation="groowt.intellij.wvc.psi.WvcTemplateTypeFinder" />
+<!--        <psi.referenceContributor-->
+<!--            implementation="groowt.intellij.wvc.psi.WvcTemplateTypeReferenceContributor"-->
+<!--        />-->
     </extensions>
 </idea-plugin>

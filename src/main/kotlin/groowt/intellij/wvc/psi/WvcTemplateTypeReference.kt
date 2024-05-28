@@ -1,5 +1,7 @@
 package groowt.intellij.wvc.psi
 
+import com.intellij.codeInsight.lookup.LookupElementBuilder
+import com.intellij.icons.AllIcons
 import com.intellij.openapi.util.TextRange
 import com.intellij.psi.*
 
@@ -25,7 +27,9 @@ class WvcTemplateTypeReference(
     }
 
     override fun getVariants(): Array<Any> {
-        return super<PsiReferenceBase>.getVariants() // TODO
+        return findWvcTemplates(myElement.project, templateClassCanonicalName).map {
+            LookupElementBuilder.create(it).withIcon(AllIcons.Xml.Html5).withTypeText(it.templateClassName)
+        }.toTypedArray()
     }
 
 }

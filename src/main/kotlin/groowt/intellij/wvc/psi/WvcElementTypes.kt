@@ -1,11 +1,10 @@
 package groowt.intellij.wvc.psi
 
-import com.intellij.psi.tree.IFileElementType
-import groowt.intellij.wvc.WvcLanguage
+import groowt.intellij.wvc.psi.type.WvcCompilationUnitType
 
 object WvcElementTypes {
-    val file = IFileElementType("wvcFile", WvcLanguage)
-    val compilationUnit = WvcElementType("compilationUnit")
+    val file = WvcFileElementType()
+    val compilationUnit = WvcCompilationUnitType()
     val preamble = WvcElementType("preamble")
     val body = WvcElementType("body")
     val bodyText = WvcElementType("bodyText")

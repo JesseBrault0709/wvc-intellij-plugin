@@ -1,13 +1,18 @@
 package groowt.intellij.wvc.psi
 
+import com.intellij.psi.tree.IFileElementType
+import groowt.intellij.wvc.WvcLanguage
+
 object WvcElementTypes {
+    val file = IFileElementType("wvcFile", WvcLanguage)
     val compilationUnit = WvcElementType("compilationUnit")
     val preamble = WvcElementType("preamble")
     val body = WvcElementType("body")
     val bodyText = WvcElementType("bodyText")
-    val gStringBodyText = WvcElementType("gStringBodyText")
-    val jStringBodyText = WvcElementType("jStringBodyText")
-    val gStringBodyTextGroovyElement = WvcElementType("gStringBodyTextGroovyElement")
+    val questionTag = WvcElementType("questionTag")
+    val htmlComment = WvcElementType("htmlComment")
+    val text = WvcElementType("text")
+    val bodyTextGroovyElement = WvcElementType("bodyTextGroovyElement")
     val component = WvcElementType("component")
     val selfClosingComponent = WvcElementType("selfClosingComponent")
     val componentWithChildren = WvcElementType("componentWithChildren")

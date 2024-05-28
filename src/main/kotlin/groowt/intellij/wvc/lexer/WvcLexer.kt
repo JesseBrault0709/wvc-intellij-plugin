@@ -3,7 +3,7 @@ package groowt.intellij.wvc.lexer
 import com.intellij.lexer.LexerBase
 import com.intellij.psi.tree.IElementType
 import com.intellij.util.text.CharSequenceReader
-import groowt.intellij.wvc.psi.mapAntlrTypeToIElementType
+import groowt.intellij.wvc.psi.mapAntlrTokenTypeToIElementType
 import groowt.view.component.web.antlr.SimplePairCounter
 import groowt.view.component.web.antlr.WebViewComponentsLexer
 import org.antlr.v4.runtime.CharStreams
@@ -58,7 +58,7 @@ class WvcLexer(private val lexer: WebViewComponentsLexer = WebViewComponentsLexe
             if (type == Token.EOF) {
                 null
             } else {
-                mapAntlrTypeToIElementType(type)
+                mapAntlrTokenTypeToIElementType(type)
             }
         }
     }
@@ -86,9 +86,9 @@ class WvcLexer(private val lexer: WebViewComponentsLexer = WebViewComponentsLexe
         lexer.curlies = state.curlies.apply { setLexer(lexer) }
         lexer.parentheses = state.parentheses.apply { setLexer(lexer) }
 
-        lexer.isCanPreamble = state.canPreamble
-        lexer.isInPreamble = state.inPreamble
-        lexer.isInConstructor = state.inConstructor
+        lexer.setCanPreamble(state.canPreamble)
+        lexer.setInPreamble(state.inPreamble)
+        lexer.setInConstructor(state.inConstructor)
     }
 
     private fun getStateForId(id: Int): WvcLexerState {
@@ -113,9 +113,9 @@ class WvcLexer(private val lexer: WebViewComponentsLexer = WebViewComponentsLexe
             lexer._modeStack,
             lexer.curlies,
             lexer.parentheses,
-            lexer.isCanPreamble,
-            lexer.isInPreamble,
-            lexer.isInConstructor
+            lexer.canPreamble(),
+            lexer.inPreamble(),
+            lexer.inConstructor()
         )
     }
 

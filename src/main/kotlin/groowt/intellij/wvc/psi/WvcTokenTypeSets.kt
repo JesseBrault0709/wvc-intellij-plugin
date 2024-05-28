@@ -15,6 +15,10 @@ object WvcTokenTypeSets {
     )
 
     val tagIdentifierTokens: TokenSet = createWvcTokenSet(TypedIdentifier, StringIdentifier)
-    val badTokens: TokenSet = createWvcTokenSet(TagStartError, TagError)
+
+    val commentTokens: TokenSet = createWvcTokenSet()
+    val stringLiteralTokens: TokenSet = createWvcTokenSet()
+
+    val badTokens: TokenSet = createWvcTokenSet(ErrorChar)
 
 }

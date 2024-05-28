@@ -24,6 +24,7 @@ dependencies {
     implementation("groowt:web-view-components-compiler:0.1.0")
     implementation("org.antlr:antlr4-intellij-adaptor:0.1")
     intellijPlatform {
+        bundledPlugin("com.intellij.java")
         intellijIdeaCommunity("242.10180.25")
         instrumentationTools()
     }

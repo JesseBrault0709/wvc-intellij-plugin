@@ -20,6 +20,7 @@
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
@@ -35,6 +36,14 @@
                 language="Web View Components"
                 implementationClass="groowt.intellij.wvc.syntax.WvcSyntaxHighlighterFactory"
         />
+        <lang.parserDefinition
+                language="Web View Components"
+                implementationClass="groowt.intellij.wvc.parser.WvcParserDefinition"
+        />
         <colorSettingsPage implementation="groowt.intellij.wvc.syntax.WvcColorSettingsPage" />
+        <psi.referenceContributor
+            language="JAVA"
+            implementation="groowt.intellij.wvc.psi.WvcTemplateTypeReferenceContributor"
+        />
     </extensions>
 </idea-plugin>

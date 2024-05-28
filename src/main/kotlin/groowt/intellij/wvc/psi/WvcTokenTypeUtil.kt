@@ -5,10 +5,10 @@ import com.intellij.psi.tree.TokenSet
 import com.jetbrains.rd.util.getOrCreate
 import groowt.view.component.web.antlr.WebViewComponentsLexer
 
-private val antlrTypeToIElementType: MutableMap<Int, IElementType> = HashMap()
+private val antlrTokenTypeToIElementType: MutableMap<Int, IElementType> = HashMap()
 
-fun mapAntlrTypeToIElementType(antlrType: Int): IElementType {
-    return antlrTypeToIElementType.getOrCreate(antlrType) {
+fun mapAntlrTokenTypeToIElementType(antlrType: Int): IElementType {
+    return antlrTokenTypeToIElementType.getOrCreate(antlrType) {
         if (antlrType == WebViewComponentsLexer.GroovyCode) {
             WvcGroovyTokenType(antlrType)
         } else {
@@ -19,4 +19,4 @@ fun mapAntlrTypeToIElementType(antlrType: Int): IElementType {
 }
 
 fun createWvcTokenSet(vararg antlrTypes: Int): TokenSet =
-    TokenSet.create(*antlrTypes.map(::mapAntlrTypeToIElementType).toTypedArray())
+    TokenSet.create(*antlrTypes.map(::mapAntlrTokenTypeToIElementType).toTypedArray())

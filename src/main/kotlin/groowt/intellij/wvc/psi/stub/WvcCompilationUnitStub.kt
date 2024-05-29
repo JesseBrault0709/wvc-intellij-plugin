@@ -1,6 +1,8 @@
 package groowt.intellij.wvc.psi.stub
 
-import com.intellij.psi.PsiElement
 import com.intellij.psi.stubs.StubElement
+import groowt.intellij.wvc.psi.element.WvcCompilationUnit
 
-interface WvcCompilationUnitStub : StubElement<PsiElement>
+interface WvcCompilationUnitStub : StubElement<WvcCompilationUnit> {
+    val templateClassName: String?
+}

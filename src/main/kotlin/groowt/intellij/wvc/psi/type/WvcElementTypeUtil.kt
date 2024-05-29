@@ -1,11 +1,11 @@
-package groowt.intellij.wvc.psi
+package groowt.intellij.wvc.psi.type
 
 import com.intellij.psi.tree.IElementType
 import groowt.view.component.web.antlr.WebViewComponentsParser.*
 
 fun mapAntlrRuleIndexToWvcElement(ruleIndex: Int): IElementType {
     return when (ruleIndex) {
-        RULE_compilationUnit -> WvcElementTypes.compilationUnit
+        RULE_compilationUnit -> WvcStubTypes.compilationUnit
         RULE_preamble -> WvcElementTypes.preamble
         RULE_body -> WvcElementTypes.body
         RULE_bodyText -> WvcElementTypes.bodyText

@@ -3,7 +3,7 @@ package groowt.intellij.wvc.parser
 import com.intellij.lang.PsiBuilder
 import com.intellij.openapi.progress.ProgressIndicatorProvider
 import com.intellij.util.text.CharSequenceReader
-import groowt.intellij.wvc.psi.WvcTokenType
+import groowt.intellij.wvc.lexer.type.WvcTokenType
 import org.antlr.v4.runtime.CharStream
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenFactory

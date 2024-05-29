@@ -1,4 +1,4 @@
-package groowt.intellij.wvc.psi
+package groowt.intellij.wvc.lexer.type
 
 import com.intellij.psi.tree.IElementType
 import com.intellij.psi.tree.TokenSet
@@ -10,7 +10,7 @@ private val antlrTokenTypeToIElementType: MutableMap<Int, IElementType> = HashMa
 fun mapAntlrTokenTypeToIElementType(antlrType: Int): IElementType {
     return antlrTokenTypeToIElementType.getOrCreate(antlrType) {
         if (antlrType == WebViewComponentsLexer.GroovyCode) {
-            WvcGroovyTokenType(antlrType)
+            WvcGroovyTokenType()
         } else {
             val displayName = WebViewComponentsLexer.VOCABULARY.getDisplayName(antlrType)
             WvcTokenType(antlrType, "Wvc$displayName")

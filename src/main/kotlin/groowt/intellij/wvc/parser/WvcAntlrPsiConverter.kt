@@ -2,7 +2,7 @@ package groowt.intellij.wvc.parser
 
 import com.intellij.lang.PsiBuilder
 import com.intellij.openapi.progress.ProgressIndicatorProvider
-import groowt.intellij.wvc.psi.mapAntlrRuleIndexToWvcElement
+import groowt.intellij.wvc.psi.type.mapAntlrRuleIndexToWvcElement
 import groowt.view.component.web.antlr.ParserError
 import groowt.view.component.web.antlr.ParserErrorListener
 import groowt.view.component.web.antlr.WebViewComponentsParserBaseListener

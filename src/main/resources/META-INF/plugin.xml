@@ -21,16 +21,21 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.java</depends>
+    <depends>org.intellij.groovy</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <fileType
-                name="Web View Components"
+                name="wvc"
                 implementationClass="groowt.intellij.wvc.WvcLanguageFileType"
                 fieldName="INSTANCE"
                 language="Web View Components"
                 extensions="wvc"
+        />
+        <fileType.fileViewProviderFactory
+                filetype="wvc"
+                implementationClass="groowt.intellij.wvc.file.WvcFileViewProviderFactory"
         />
         <lang.syntaxHighlighterFactory
                 language="Web View Components"
@@ -41,8 +46,8 @@
                 implementationClass="groowt.intellij.wvc.parser.WvcParserDefinition"
         />
         <colorSettingsPage implementation="groowt.intellij.wvc.syntax.WvcColorSettingsPage" />
-        <stubElementTypeHolder class="groowt.intellij.wvc.psi.stub.WvcStubTypes" externalIdPrefix="wvc" />
-        <stubIndex implementation="groowt.intellij.wvc.index.WvcQualifiedTemplateNamesIndex" />
+        <stubElementTypeHolder class="groowt.intellij.wvc.psi.type.WvcStubTypes" externalIdPrefix="wvc." />
+        <stubIndex implementation="groowt.intellij.wvc.index.WvcQualifiedTemplateClassNamesIndex" />
         <java.elementFinder implementation="groowt.intellij.wvc.psi.WvcTemplateTypeFinder" />
 <!--        <psi.referenceContributor-->
 <!--            implementation="groowt.intellij.wvc.psi.WvcTemplateTypeReferenceContributor"-->

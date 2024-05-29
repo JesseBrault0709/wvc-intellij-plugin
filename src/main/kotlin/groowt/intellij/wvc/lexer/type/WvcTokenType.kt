@@ -1,4 +1,4 @@
-package groowt.intellij.wvc.psi
+package groowt.intellij.wvc.lexer.type
 
 import com.intellij.psi.tree.IElementType
 import groowt.intellij.wvc.WvcLanguage

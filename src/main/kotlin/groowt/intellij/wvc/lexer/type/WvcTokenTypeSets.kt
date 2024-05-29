@@ -1,4 +1,4 @@
-package groowt.intellij.wvc.psi
+package groowt.intellij.wvc.lexer.type
 
 import com.intellij.psi.tree.TokenSet
 import groowt.view.component.web.antlr.WebViewComponentsLexer.*

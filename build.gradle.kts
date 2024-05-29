@@ -25,6 +25,7 @@ dependencies {
     implementation("org.antlr:antlr4-intellij-adaptor:0.1")
     intellijPlatform {
         bundledPlugin("com.intellij.java")
+        bundledPlugin("org.intellij.groovy")
         intellijIdeaCommunity("242.10180.25")
         instrumentationTools()
     }

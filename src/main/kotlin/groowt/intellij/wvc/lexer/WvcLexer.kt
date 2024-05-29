@@ -3,7 +3,7 @@ package groowt.intellij.wvc.lexer
 import com.intellij.lexer.LexerBase
 import com.intellij.psi.tree.IElementType
 import com.intellij.util.text.CharSequenceReader
-import groowt.intellij.wvc.psi.mapAntlrTokenTypeToIElementType
+import groowt.intellij.wvc.lexer.type.mapAntlrTokenTypeToIElementType
 import groowt.view.component.web.antlr.SimplePairCounter
 import groowt.view.component.web.antlr.WebViewComponentsLexer
 import org.antlr.v4.runtime.CharStreams
@@ -49,6 +49,8 @@ class WvcLexer(private val lexer: WebViewComponentsLexer = WebViewComponentsLexe
         }
         return stateToId[state] ?: throw IllegalStateException("There is no id cached for state: $state")
     }
+
+    fun getWvcLexerState(): WvcLexerState? = currentState
 
     override fun getTokenType(): IElementType? {
         if (currentToken == null) {

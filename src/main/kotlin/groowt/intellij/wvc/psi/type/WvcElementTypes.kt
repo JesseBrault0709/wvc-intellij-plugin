@@ -1,10 +1,6 @@
-package groowt.intellij.wvc.psi
-
-import groowt.intellij.wvc.psi.type.WvcCompilationUnitType
+package groowt.intellij.wvc.psi.type
 
 object WvcElementTypes {
-    val file = WvcFileElementType()
-    val compilationUnit = WvcCompilationUnitType()
     val preamble = WvcElementType("preamble")
     val body = WvcElementType("body")
     val bodyText = WvcElementType("bodyText")

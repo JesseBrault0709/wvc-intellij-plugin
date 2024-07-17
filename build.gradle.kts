@@ -2,9 +2,9 @@
 // https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 // https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html#setting-up-intellij-platform
 
-
 plugins {
     id("java")
+    id("com.jessebrault.jbarchiva") version "0.2.2"
     id("org.jetbrains.kotlin.jvm") version "1.9.23"
     id("org.jetbrains.intellij.platform") version "2.0.0-beta3"
 }
@@ -17,7 +17,6 @@ repositories {
     intellijPlatform {
         defaultRepositories()
     }
-    mavenLocal()
 }
 
 dependencies {

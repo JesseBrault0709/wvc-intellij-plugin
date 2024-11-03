@@ -5,8 +5,8 @@
 plugins {
     id("java")
     id("com.jessebrault.jbarchiva") version "0.2.2"
-    id("org.jetbrains.kotlin.jvm") version "1.9.23"
-    id("org.jetbrains.intellij.platform") version "2.0.0-beta3"
+    id("org.jetbrains.kotlin.jvm") version "1.9.24"
+    id("org.jetbrains.intellij.platform") version "2.1.0"
 }
 
 group = "groowt.intellij"
@@ -25,7 +25,7 @@ dependencies {
     intellijPlatform {
         bundledPlugin("com.intellij.java")
         bundledPlugin("org.intellij.groovy")
-        intellijIdeaCommunity("242.10180.25")
+        intellijIdeaCommunity("2024.2.4")
         instrumentationTools()
     }
 }

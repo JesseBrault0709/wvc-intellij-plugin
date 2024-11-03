@@ -27,6 +27,15 @@ dependencies {
         bundledPlugin("org.intellij.groovy")
         intellijIdeaCommunity("2024.2.4")
         instrumentationTools()
+        pluginVerifier()
+    }
+}
+
+intellijPlatform {
+    pluginVerification {
+        ides {
+            recommended()
+        }
     }
 }
 
